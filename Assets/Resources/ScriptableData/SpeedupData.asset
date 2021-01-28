@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f4c71ed97a947479ad122b262963fe, type: 3}
   m_Name: SpeedupData
   m_EditorClassIdentifier: 
-  speedModifier: 1.5
-  timeActive: 10
+  speedModifier: 3
+  timeActive: 1
