@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Coin : Activatable
+public class PowerupActivatable : Activatable
 {
-    public CoinData coinData;
+    public PowerupType type;
 
     private Tilemap tilemap;
 
@@ -25,11 +25,11 @@ public class Coin : Activatable
         }
     }
 
-    public override void Action()
+    public override void Action(PlayerController playerController)
     {
-        if(tilemap != null)
+        if (tilemap != null)
         {
-            GameManager.Instance.AddScore(coinData.coinsToAdd);
+            playerController.AddPowerup(type);
             toDestroy = true;
         }
     }
