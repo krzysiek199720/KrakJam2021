@@ -27,7 +27,6 @@ public class Coin : Activatable
 
     public override void Action()
     {
-        Debug.Log("Coin");
         if(tilemap != null)
         {
             GameManager.Instance.AddScore(coinData.coinsToAdd);
