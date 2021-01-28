@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - Collectable
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Obstacles
+    uniqueID: 1507916505
     locked: 0
   - name: Player
     uniqueID: 2006679355
