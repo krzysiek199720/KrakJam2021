@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb2d;
 
-    private Dictionary<PowerupType, Powerup> powerups;
+    public Dictionary<PowerupType, Powerup> powerups;
 
     private void Start()
     {
@@ -69,7 +69,12 @@ public class PlayerController : MonoBehaviour
             powerups[type].AddTime();
             return;
         }
+        
+        
         Powerup thePowerup = null;
+        // Tutaj w switch przydalo by sie ogarniac priorytet powerupow
+        // np jak masz slowa to sie nie da speedup -> powerupy sie anuluja?
+
         switch (type)
         {
             case PowerupType.SPEEDUP:
@@ -87,5 +92,6 @@ public class PlayerController : MonoBehaviour
                 return;
         }
         thePowerup.PowerupStart(this);
+        GameManager.Instance.AddPowerupScore();
     }
 }

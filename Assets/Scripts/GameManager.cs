@@ -8,8 +8,12 @@ public class GameManager : MonoBehaviour
     public GameManagerData gameManagerData;
     public static GameManager Instance { get; private set; }
 
-    public int Score { get; private set; }
+    public PlayerController playerController;
+
+    public float Score { get; private set; }
     public int Lifelines { get; private set; }
+
+    public float ScoreMultiplier = 1f;
 
     private float timeToNextScore = 0f;
     private void Awake()
@@ -32,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        UpdateScoreMultiplier();
         timeToNextScore += Time.fixedDeltaTime;
         if(timeToNextScore >= 1f)
         {
@@ -42,7 +47,22 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int coins)
     {
-        Score += coins * gameManagerData.pointsPerCoin;
+        Score += coins * gameManagerData.pointsPerCoin * ScoreMultiplier;
+    }
+
+    public void AddPowerupScore()
+    {
+        UpdateScoreMultiplier();
+        Score += gameManagerData.pointsPerPowerup * ScoreMultiplier;
+    }
+
+    private void UpdateScoreMultiplier()
+    {
+        if (playerController)
+        {
+            int powerupCount = playerController.powerups.Count;
+            ScoreMultiplier = 1f + (powerupCount * gameManagerData.powerupMultiplier);
+        }
     }
 
     public void TakeLifeline(int value)
