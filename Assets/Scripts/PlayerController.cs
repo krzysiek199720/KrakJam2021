@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
 
         //MOVEMENT
         // smooth axis for now, can change to GetAxisRaw
-        desiredMovement = new Vector2(Input.GetAxis("Horizontal") * data.speed, data.climbSpeed * speedModifier * basicSpeedMultiplier);
+        desiredMovement = new Vector2(
+            allowSteering ? Input.GetAxis("Horizontal") * data.speed : 0f,
+            data.climbSpeed * speedModifier * basicSpeedMultiplier);
 
         rb2d.MovePosition(rb2d.position + desiredMovement * Time.fixedDeltaTime);
     }
@@ -108,6 +110,16 @@ public class PlayerController : MonoBehaviour
                     powerup.slowDownData = sd;
                     powerup.AddTime();
                     powerups.Add(PowerupType.SLOWDOWN, powerup);
+                    thePowerup = powerup;
+                    break;
+            }
+            case PowerupType.STEERBLOCK:
+            {
+                    SteerBlock powerup = new SteerBlock();
+                    SteerBlockData sd = Resources.Load<SteerBlockData>("ScriptableData/SteerBlockData");
+                    powerup.steerBlockData = sd;
+                    powerup.AddTime();
+                    powerups.Add(PowerupType.STEERBLOCK, powerup);
                     thePowerup = powerup;
                     break;
             }
