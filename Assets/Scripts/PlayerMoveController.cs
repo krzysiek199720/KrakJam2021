@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerMoveController : MonoBehaviour
 {
-    public float speed = 1f;
-
+    public PlayerControllerData data;
 
     private Vector2 desiredMovement = Vector2.zero;
     private float speedModifier = 1f;
@@ -22,7 +21,7 @@ public class PlayerMoveController : MonoBehaviour
     void FixedUpdate()
     {
         // smooth axis for now, can change to GetAxisRaw
-        desiredMovement = new Vector2(Input.GetAxis("Horizontal"), speed * speedModifier);
+        desiredMovement = new Vector2(Input.GetAxis("Horizontal") * data.speed, data.climbSpeed * speedModifier);
 
         rb2d.MovePosition(rb2d.position + desiredMovement * Time.fixedDeltaTime);
     }
