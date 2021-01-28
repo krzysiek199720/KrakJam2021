@@ -74,4 +74,10 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(scene.name);
         }
     }
+
+    public float CalculateSpeedMultiplier()
+    {
+        int multiplierTimes = Mathf.FloorToInt(Score / gameManagerData.scoreSpeedupInterval);
+        return multiplierTimes * gameManagerData.speedupMultiplierPerInterval;
+    }
 }

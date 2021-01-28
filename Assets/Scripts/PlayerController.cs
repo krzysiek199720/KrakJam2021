@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 desiredMovement = Vector2.zero;
     public float speedModifier = 1f;
+    public float basicSpeedMultiplier = 1f;
     public bool allowSteering = true;
 
     private Rigidbody2D rb2d;
@@ -25,10 +26,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         DoPowerups();
+        DoBasicMultiplier();
 
         //MOVEMENT
         // smooth axis for now, can change to GetAxisRaw
-        desiredMovement = new Vector2(Input.GetAxis("Horizontal") * data.speed, data.climbSpeed * speedModifier);
+        desiredMovement = new Vector2(Input.GetAxis("Horizontal") * data.speed, data.climbSpeed * speedModifier * basicSpeedMultiplier);
 
         rb2d.MovePosition(rb2d.position + desiredMovement * Time.fixedDeltaTime);
     }
@@ -40,6 +42,11 @@ public class PlayerController : MonoBehaviour
         {
             activatable.Action(this);
         }
+    }
+
+    private void DoBasicMultiplier()
+    {
+        basicSpeedMultiplier = GameManager.Instance.CalculateSpeedMultiplier();
     }
 
     private void DoPowerups()
