@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Coin : Collectable
+public class Coin : Activatable
 {
     public CoinData coinData;
 

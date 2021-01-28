@@ -28,10 +28,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Collectable col = collision.GetComponent<Collectable>();
-        if (col)
+        Debug.Log(collision.name);
+        Activatable activatable = collision.GetComponent<Activatable>();
+        if (activatable)
         {
-            col.Action();
+            activatable.Action(this);
         }
     }
 }
