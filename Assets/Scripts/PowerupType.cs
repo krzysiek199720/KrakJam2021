@@ -5,4 +5,8 @@ using UnityEngine;
 public enum PowerupType
 {
     SPEEDUP,
+    SLOWDOWN,
+    GHOST,
+    CONTROLLOSS,
+    ULTIMATE
 }

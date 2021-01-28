@@ -85,11 +85,29 @@ public class PlayerController : MonoBehaviour
         {
             case PowerupType.SPEEDUP:
             {
+                    if (powerups.ContainsKey(PowerupType.SLOWDOWN))
+                    {
+                        powerups.Remove(PowerupType.SLOWDOWN);
+                    }
                     Speedup powerup = new Speedup();
                     SpeedupData sd = Resources.Load<SpeedupData>("ScriptableData/SpeedupData");
                     powerup.speedupData = sd;
                     powerup.AddTime();
                     powerups.Add(PowerupType.SPEEDUP, powerup);
+                    thePowerup = powerup;
+                    break;
+            }
+            case PowerupType.SLOWDOWN:
+            {
+                    if (powerups.ContainsKey(PowerupType.SPEEDUP))
+                    {
+                        powerups.Remove(PowerupType.SPEEDUP);
+                    }
+                    SlowDown powerup = new SlowDown();
+                    SlowDownData sd = Resources.Load<SlowDownData>("ScriptableData/SlowdownData");
+                    powerup.slowDownData = sd;
+                    powerup.AddTime();
+                    powerups.Add(PowerupType.SLOWDOWN, powerup);
                     thePowerup = powerup;
                     break;
             }

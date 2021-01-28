@@ -78,6 +78,6 @@ public class GameManager : MonoBehaviour
     public float CalculateSpeedMultiplier()
     {
         int multiplierTimes = Mathf.FloorToInt(Score / gameManagerData.scoreSpeedupInterval);
-        return multiplierTimes * gameManagerData.speedupMultiplierPerInterval;
+        return 1f + multiplierTimes * gameManagerData.speedupMultiplierPerInterval;
     }
 }

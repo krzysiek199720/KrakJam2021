@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class SpeedupActivatable : Activatable
+public class PowerupActivatable : Activatable
 {
     public PowerupType type;
 
