@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMoveController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public PlayerControllerData data;
 
@@ -26,4 +26,12 @@ public class PlayerMoveController : MonoBehaviour
         rb2d.MovePosition(rb2d.position + desiredMovement * Time.fixedDeltaTime);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Collectable col = collision.GetComponent<Collectable>();
+        if (col)
+        {
+            col.Action();
+        }
+    }
 }

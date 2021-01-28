@@ -25,7 +25,7 @@ public class Coin : Collectable
         }
     }
 
-    protected override void Action()
+    public override void Action()
     {
         Debug.Log("Coin");
         if(tilemap != null)

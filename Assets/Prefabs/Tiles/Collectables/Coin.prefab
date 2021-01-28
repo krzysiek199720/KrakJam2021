@@ -61,9 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da3ab35889c04546bd8e8957bba4319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 256
   coinData: {fileID: 11400000, guid: f743c839e59f33c4cac0593d9423a0fd, type: 2}
 --- !u!50 &2294569103169079044
 Rigidbody2D:
@@ -73,7 +70,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196812691915054433}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
