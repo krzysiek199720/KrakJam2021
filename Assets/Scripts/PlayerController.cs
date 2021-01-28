@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speedModifier = 1f;
     public float basicSpeedMultiplier = 1f;
     public bool allowSteering = true;
+    public bool isGhost = false;
 
     private Rigidbody2D rb2d;
 
@@ -120,6 +121,16 @@ public class PlayerController : MonoBehaviour
                     powerup.steerBlockData = sd;
                     powerup.AddTime();
                     powerups.Add(PowerupType.STEERBLOCK, powerup);
+                    thePowerup = powerup;
+                    break;
+            }
+            case PowerupType.GHOST:
+            {
+                    Ghost powerup = new Ghost();
+                    GhostData sd = Resources.Load<GhostData>("ScriptableData/GhostData");
+                    powerup.ghostData = sd;
+                    powerup.AddTime();
+                    powerups.Add(PowerupType.GHOST, powerup);
                     thePowerup = powerup;
                     break;
             }
