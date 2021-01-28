@@ -60,4 +60,5 @@ crashlytics-build.properties
 
 #tmpscenes
 /[Aa]ssets/tmpScenes/
+/[Aa]ssets/tmpScenes.meta
 
