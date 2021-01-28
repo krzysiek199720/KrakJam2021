@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
                 powerupsToDelete.Add(powerup.type);
                 powerup.PowerupEnd(this);
             }
-            Debug.Log(powerup.TimeActiveLeft);
         }
 
         foreach (var item in powerupsToDelete)
