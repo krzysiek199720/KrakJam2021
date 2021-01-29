@@ -27,7 +27,6 @@ public class Spike : Activatable
 
     public override void Action(PlayerController playerController)
     {
-        Debug.Log("Spike");
         if (playerController.isUltimateActive)
         {
             if (tilemap != null)
