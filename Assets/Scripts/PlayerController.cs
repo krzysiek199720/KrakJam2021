@@ -29,6 +29,12 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(!GameManager.Instance.isAlive)
+        {
+            // smierc
+            return;
+        }
+
         DoPowerups();
         DoBasicMultiplier();
 
@@ -36,7 +42,7 @@ public class PlayerController : MonoBehaviour
         // smooth axis for now, can change to GetAxisRaw
         desiredMovement = new Vector2(
             allowSteering ? Input.GetAxis("Horizontal") * data.speed : 0f,
-            data.climbSpeed * speedModifier * basicSpeedMultiplier);
+            GetCurrentSpeed());
 
         Vector3 newPosition = rb2d.position + desiredMovement * Time.fixedDeltaTime;
         newPosition.x = Mathf.Clamp(newPosition.x, data.positionMinX, data.positionMaxX);
@@ -51,6 +57,11 @@ public class PlayerController : MonoBehaviour
         {
             activatable.Action(this);
         }
+    }
+
+    public float GetCurrentSpeed()
+    {
+        return data.climbSpeed * speedModifier * basicSpeedMultiplier;
     }
 
     private void DoBasicMultiplier()

@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class FollowPlayerY : MonoBehaviour
 {
-    public Transform playerTransform;
+    public PlayerController playerController;
+
+    private bool shouldContinue = false;
+    private float speed = 0f;
     
     void Update()
     {
-        float playerY = playerTransform.position.y;
+        shouldContinue = !GameManager.Instance.isAlive;
+
+        float positionY = 0f;
+        if (shouldContinue)
+        {
+            speed = playerController.GetCurrentSpeed();
+            positionY = transform.position.y + speed * Time.deltaTime;
+        }
+        else
+            positionY = playerController.transform.position.y;
+
         transform.position = new Vector3(
             transform.position.x,
-            playerY,
+            positionY,
             transform.position.z);
     }
 }

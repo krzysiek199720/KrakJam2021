@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public float Score { get; private set; }
     public int Lifelines { get; private set; }
+    public bool isAlive { get { return Lifelines >= 1; } }
 
     public float ScoreMultiplier = 1f;
 
@@ -76,11 +77,11 @@ public class GameManager : MonoBehaviour
     public void TakeLifeline(int value)
     {
         Lifelines -= value;
-        if(Lifelines < 1)
-        {
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
-        }
+        //if(!isAlive)
+        //{
+        //    Scene scene = SceneManager.GetActiveScene();
+        //    SceneManager.LoadScene(scene.name);
+        //}
     }
 
     public void AddLifeline(int value)
