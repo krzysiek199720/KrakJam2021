@@ -38,7 +38,10 @@ public class PlayerController : MonoBehaviour
             allowSteering ? Input.GetAxis("Horizontal") * data.speed : 0f,
             data.climbSpeed * speedModifier * basicSpeedMultiplier);
 
-        rb2d.MovePosition(rb2d.position + desiredMovement * Time.fixedDeltaTime);
+        Vector3 newPosition = rb2d.position + desiredMovement * Time.fixedDeltaTime;
+        newPosition.x = Mathf.Clamp(newPosition.x, data.positionMinX, data.positionMaxX);
+
+        rb2d.MovePosition(newPosition);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

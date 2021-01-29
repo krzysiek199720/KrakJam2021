@@ -7,4 +7,7 @@ public class PlayerControllerData : ScriptableObject
 {
     public float climbSpeed = 1f;
     public float speed = 1f;
+
+    public float positionMinX = -4f;
+    public float positionMaxX = 5f;
 }
