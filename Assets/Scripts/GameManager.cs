@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     private int coinsCollected = 0;
 
     private float timeToNextScore = 0f;
+    private bool calculateScore = true;
     private void Awake()
     {
         if (Instance == null)
@@ -47,31 +48,40 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        UpdateScoreMultiplier();
-        timeToNextScore += Time.fixedDeltaTime;
-        if(timeToNextScore >= 1f)
+        if (calculateScore)
         {
-            Score += gameManagerData.pointsPerSecond;
-            timeToNextScore--;
+            UpdateScoreMultiplier();
+            timeToNextScore += Time.fixedDeltaTime;
+            if(timeToNextScore >= 1f)
+            {
+                Score += gameManagerData.pointsPerSecond;
+                timeToNextScore--;
+            }
         }
     }
 
     public void AddScore(int coins)
     {
-        Score += coins * gameManagerData.pointsPerCoin * ScoreMultiplier;
-        coinsCollected += coins;
-        if(coinsCollected >= gameManagerData.coinsToUltimate)
+        if (calculateScore)
         {
-            Debug.Log("coin ult");
-            coins -= gameManagerData.coinsToUltimate;
-            playerController.AddPowerup(PowerupType.ULTIMATE);
+            Score += coins * gameManagerData.pointsPerCoin * ScoreMultiplier;
+            coinsCollected += coins;
+            if(coinsCollected >= gameManagerData.coinsToUltimate)
+            {
+                Debug.Log("coin ult");
+                coins -= gameManagerData.coinsToUltimate;
+                playerController.AddPowerup(PowerupType.ULTIMATE);
+            }
         }
     }
 
     public void AddPowerupScore()
     {
-        UpdateScoreMultiplier();
-        Score += gameManagerData.pointsPerPowerup * ScoreMultiplier;
+        if (calculateScore)
+        {
+            UpdateScoreMultiplier();
+            Score += gameManagerData.pointsPerPowerup * ScoreMultiplier;
+        }
     }
 
     private void UpdateScoreMultiplier()
@@ -92,6 +102,8 @@ public class GameManager : MonoBehaviour
             return;
 
         Lifelines -= value;
+        if (!isAlive)
+            calculateScore = false;
     }
 
     public void AddLifeline(int value)
