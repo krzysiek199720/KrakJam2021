@@ -36,6 +36,15 @@ public class GameManager : MonoBehaviour
         Lifelines = gameManagerData.lifelines;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
+    }
+
     private void FixedUpdate()
     {
         UpdateScoreMultiplier();
@@ -74,14 +83,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    
     public void TakeLifeline(int value)
     {
+        // Shield is not taken if youre using ult or ghost
+        if (playerController.powerups.ContainsKey(PowerupType.ULTIMATE)
+            || playerController.powerups.ContainsKey(PowerupType.GHOST))
+            return;
+
         Lifelines -= value;
-        //if(!isAlive)
-        //{
-        //    Scene scene = SceneManager.GetActiveScene();
-        //    SceneManager.LoadScene(scene.name);
-        //}
     }
 
     public void AddLifeline(int value)
