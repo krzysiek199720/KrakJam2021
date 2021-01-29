@@ -15,13 +15,14 @@ public class GameManager : MonoBehaviour
 
     public float ScoreMultiplier = 1f;
 
+    private int coinsCollected = 0;
+
     private float timeToNextScore = 0f;
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -48,6 +49,13 @@ public class GameManager : MonoBehaviour
     public void AddScore(int coins)
     {
         Score += coins * gameManagerData.pointsPerCoin * ScoreMultiplier;
+        coinsCollected += coins;
+        if(coinsCollected >= gameManagerData.coinsToUltimate)
+        {
+            Debug.Log("coin ult");
+            coins -= gameManagerData.coinsToUltimate;
+            playerController.AddPowerup(PowerupType.ULTIMATE);
+        }
     }
 
     public void AddPowerupScore()

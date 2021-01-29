@@ -14,4 +14,6 @@ public class GameManagerData : ScriptableObject
 
     public float scoreSpeedupInterval = 100f;
     public float speedupMultiplierPerInterval = 0.2f;
+
+    public int coinsToUltimate = 2;
 }

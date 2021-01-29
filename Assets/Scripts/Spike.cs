@@ -9,8 +9,13 @@ public class Spike : Activatable
      public override void Action(PlayerController playerController)
     {
         Debug.Log("Spike");
+        if (playerController.isUltimateActive)
+            return;
+
         if (playerController.isGhost)
             return;
+
+
         GameManager.Instance.TakeLifeline(spikeData.damage);
     }
 }
