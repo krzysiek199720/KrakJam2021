@@ -8,5 +8,6 @@ public enum PowerupType
     SLOWDOWN,
     GHOST,
     STEERBLOCK,
-    ULTIMATE
+    ULTIMATE,
+    SHIELD
 }

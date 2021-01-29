@@ -191,6 +191,11 @@ public class PlayerController : MonoBehaviour
                     thePowerup = powerup;
                     break;
             }
+            case PowerupType.SHIELD:
+                {
+                    thePowerup = new Shield();
+                    break;
+                }
             default:
                 Debug.LogError("Unknown PowerupType");
                 return;

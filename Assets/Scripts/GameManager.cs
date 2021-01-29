@@ -83,6 +83,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void AddLifeline(int value)
+    {
+        Lifelines += value;
+    }
+
     public float CalculateSpeedMultiplier()
     {
         int multiplierTimes = Mathf.FloorToInt(Score / gameManagerData.scoreSpeedupInterval);
