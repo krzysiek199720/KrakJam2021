@@ -82,6 +82,13 @@ public class PlayerController : MonoBehaviour
             return;
         }
         
+        // usuwanie steerblock powerupa
+        if(type != PowerupType.STEERBLOCK && powerups.ContainsKey(PowerupType.STEERBLOCK))
+        {
+            SteerBlock sb = (SteerBlock) powerups[PowerupType.STEERBLOCK];
+            sb.PowerupEnd(this);
+            powerups.Remove(sb.type);
+        }
         
         Powerup thePowerup = null;
         // Tutaj w switch przydalo by sie ogarniac priorytet powerupow
