@@ -19,7 +19,7 @@ public class AudioController : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
         Instance = this;
@@ -27,6 +27,20 @@ public class AudioController : MonoBehaviour
         sounds = new Dictionary<SoundId, AudioSource>();
         activeSounds = new Dictionary<SoundId, AudioSource>();
         populateSounds();
+    }
+
+    private void FixedUpdate()
+    {
+        List<SoundId> toRemove = new List<SoundId>();
+        foreach (var item in activeSounds)
+        {
+            if (!item.Value.isPlaying)
+                toRemove.Add(item.Key);
+        }
+        foreach (var item in toRemove)
+        {
+            activeSounds.Remove(item);
+        }
     }
 
     private void populateSounds()
