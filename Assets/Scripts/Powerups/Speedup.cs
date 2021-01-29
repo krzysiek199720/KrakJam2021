@@ -7,6 +7,11 @@ public class Speedup : Powerup
     public SpeedupData speedupData;
     public override void PowerupStart(PlayerController playerController)
     {
+        if (playerController.powerups.ContainsKey(PowerupType.ULTIMATE))
+        {
+            playerController.powerups.Remove(PowerupType.SPEEDUP);
+            return;
+        }
         playerController.speedModifier = speedupData.speedModifier;
     }
 

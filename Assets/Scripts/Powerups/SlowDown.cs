@@ -8,6 +8,11 @@ public class SlowDown : Powerup
 
     public override void PowerupStart(PlayerController playerController)
     {
+        if (playerController.powerups.ContainsKey(PowerupType.ULTIMATE))
+        {
+            playerController.powerups.Remove(PowerupType.SLOWDOWN);
+            return;
+        }
         playerController.speedModifier = slowDownData.speedModifier;
     }
 

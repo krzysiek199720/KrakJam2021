@@ -177,8 +177,6 @@ public class PlayerController : MonoBehaviour
             }
             case PowerupType.ULTIMATE:
             {
-                    Debug.Log("ult start");
-
                     Ultimate powerup = new Ultimate();
                     UltimateData ud;
                     if (powerupsData.ContainsKey(PowerupType.ULTIMATE))
