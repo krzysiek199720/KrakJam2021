@@ -6,9 +6,16 @@ public class FollowPlayerY : MonoBehaviour
 {
     public PlayerController playerController;
 
+    private float localShift = 0f;
+
     private bool shouldContinue = false;
     private float speed = 0f;
-    
+
+    private void Start()
+    {
+        localShift = playerController.transform.position.y;
+    }
+
     void Update()
     {
         shouldContinue = !GameManager.Instance.isAlive;
@@ -24,7 +31,7 @@ public class FollowPlayerY : MonoBehaviour
 
         transform.position = new Vector3(
             transform.position.x,
-            positionY,
+            positionY - localShift,
             transform.position.z);
     }
 }
