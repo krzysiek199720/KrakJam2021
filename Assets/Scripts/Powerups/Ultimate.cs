@@ -15,6 +15,10 @@ public class Ultimate : Powerup
         playerController.powerups.Remove(PowerupType.SLOWDOWN);
         playerController.powerups.Remove(PowerupType.SPEEDUP);
         playerController.ultimate.gameObject.SetActive(true);
+
+        AudioController.Instance.Play(SoundId.Ultitame_start);
+        float temp = AudioController.Instance.GetSoundLength(SoundId.Ultitame_start);
+        AudioController.Instance.Play(SoundId.Ultitame_loop, temp);
     }
 
     public override void PowerupEnd(PlayerController playerController)
@@ -23,7 +27,7 @@ public class Ultimate : Powerup
         playerController.speedModifier = 1f;
         playerController.ultimate.gameObject.SetActive(false);
         playerController.AddPowerup(PowerupType.SHIELD);
-
+        AudioController.Instance.Stop(SoundId.Ultitame_loop);
     }
 
     public override void AddTime()

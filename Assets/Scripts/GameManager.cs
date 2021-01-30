@@ -79,7 +79,10 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Ending");
         playerController.shouldGameRun = false;
-        //mati do stuff here :D
+        
+        calculateScore = false;
+
+        PlayerPrefs.SetFloat("Score", Score);
         SceneManager.LoadScene(2);
     }
 

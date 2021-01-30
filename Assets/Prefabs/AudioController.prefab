@@ -82,6 +82,16 @@ MonoBehaviour:
     volume: 0.75
     pitch: 1
     loop: 0
+  - id: 8
+    clip: {fileID: 8300000, guid: a1a05c3f64edc2946927180f98a1920d, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 1
+  - id: 7
+    clip: {fileID: 8300000, guid: 1a4e595da0d237546b5437b54d6eefa4, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
 --- !u!1 &3201699775353141074
 GameObject:
   m_ObjectHideFlags: 0

@@ -623,10 +623,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 3aa60680-fa68-4f26-926b-4eaf2345af25
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: KrakJam2021
+  organizationId: mateij
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

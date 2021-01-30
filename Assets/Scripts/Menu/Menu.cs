@@ -20,4 +20,5 @@ public class Menu : MonoBehaviour
             comic.gameObject.SetActive(true);
         }
     }
+
 }

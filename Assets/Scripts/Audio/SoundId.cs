@@ -11,4 +11,6 @@ public enum SoundId
     Collect_slow,
     Collect_bird,
     Obstacle_hollow,
+    Ultitame_start,
+    Ultitame_loop,
 }

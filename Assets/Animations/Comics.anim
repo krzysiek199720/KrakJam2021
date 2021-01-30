@@ -961,7 +961,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 7.35
-    functionName: LoadGameScene
+    functionName: LoadGameScene_test
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -11,7 +11,15 @@ public class ComicsController : MonoBehaviour
     private void Start()
     {
         if (PlayerPrefs.HasKey("Score") && score_text != null)
-            score_text.text = "Score: " + PlayerPrefs.GetInt("Score", 0).ToString();
+            score_text.text = "Score: " + PlayerPrefs.GetFloat("Score", 0).ToString();
+    }
+
+    private void Update()
+    {
+        if (Input.anyKeyDown)
+        {
+            LoadMenuScene();
+        }
     }
 
     public void LoadGameScene()
