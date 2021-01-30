@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
     private void DoPowerups()
     {
         List<PowerupType> powerupsToDelete = new List<PowerupType>();
-        Debug.Log(powerups.ContainsKey(PowerupType.ULTIMATE));
         foreach (var powerup in powerups)
         {
             bool result = powerup.Value.TickTime(Time.fixedDeltaTime);
@@ -83,17 +82,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        Debug.Log(powerups.ContainsKey(PowerupType.ULTIMATE));
-        Debug.Log(powerupsToDelete.Count);
-        if(powerupsToDelete.Count > 0)
-            Debug.Log(powerupsToDelete[0]);
-
-
         foreach (var item in powerupsToDelete)
         {
             powerups.Remove(item);
         }
-        Debug.Log(powerups.ContainsKey(PowerupType.ULTIMATE));
     }
 
     public void AddPowerup(PowerupType type)
