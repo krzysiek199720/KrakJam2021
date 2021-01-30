@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerControllerData data;
     public Animator animator;
+    public Camera camera;
 
     private Vector2 desiredMovement = Vector2.zero;
     public float speedModifier = 1f;
@@ -49,9 +50,15 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("walkSpeed", GetCurrentSpeedModifier());
 
         //MOVEMENT
-        // smooth axis for now, can change to GetAxisRaw
+
+        Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
+
+        //desiredMovement = new Vector2(
+        //    allowSteering ? Input.GetAxis("Horizontal") * data.speed : 0f,
+        //    GetCurrentSpeed());
+
         desiredMovement = new Vector2(
-            allowSteering ? Input.GetAxis("Horizontal") * data.speed : 0f,
+            allowSteering ? Mathf.Clamp(mousePos.x - transform.position.x, -1f, 1f) * data.speed : 0f,
             GetCurrentSpeed());
 
         Vector3 newPosition = rb2d.position + desiredMovement * Time.fixedDeltaTime;
