@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11711a00dd3c0e643a79904183266037, type: 3}
   m_Name: GhostData
   m_EditorClassIdentifier: 
-  timeActive: 1
+  timeActive: 5
