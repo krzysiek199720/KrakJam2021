@@ -43,6 +43,10 @@ public class TreeRepeat : MonoBehaviour, IRepeat
         repeats[0].sprite = repeatSprites[0];
         repGo.AddComponent<BoxCollider2D>();
 
+        Vector3 newPos1 = bottomgo.transform.position;
+        newPos1.y += bottom.sprite.bounds.max.y + bottomYMin;
+        repGo.transform.position = newPos1;
+
         GameObject prevGo = repGo;
         for (int i = 1; i < repeats.Length; i++)
         {

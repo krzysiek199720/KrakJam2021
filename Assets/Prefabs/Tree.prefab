@@ -48,5 +48,5 @@ MonoBehaviour:
   repeatSprites:
   - {fileID: 21300000, guid: 283e1e0e38c739f458f5ddcb9d7e10ba, type: 3}
   - {fileID: 21300000, guid: 78f879312dd85154494090534735ad20, type: 3}
-  bottomYMin: -5
+  bottomYMin: -10
   repeatObjects: 2

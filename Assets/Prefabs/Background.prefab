@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191842606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1419739591570716916}
@@ -130,5 +130,5 @@ MonoBehaviour:
   bottomSprite: {fileID: 21300000, guid: 51744e32814e54f49892fd95402de202, type: 3}
   repeatSprites:
   - {fileID: 21300000, guid: ca951024b6c81b74091e295e1bb7ad32, type: 3}
-  bottomYMin: 5
+  bottomYMin: 0
   repeatObjects: 2
