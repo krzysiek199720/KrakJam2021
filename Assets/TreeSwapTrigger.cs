@@ -6,10 +6,10 @@ public class TreeSwapTrigger : MonoBehaviour
 {
     private void OnCollisionExit2D(Collision2D collision)
     {
-        TreeRepeat tree = collision.gameObject.GetComponentInParent<TreeRepeat>();
-        if (tree)
+        IRepeat repeat = collision.gameObject.GetComponentInParent<IRepeat>();
+        if (repeat != null)
         {
-            tree.SwapRepeat();
+            repeat.SwapRepeat();
         }
     }
 }

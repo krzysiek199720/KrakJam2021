@@ -2,39 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeRepeat : MonoBehaviour, IRepeat
+public class BackgroundRepeat : MonoBehaviour, IRepeat
 {
     [SortingMagic.SortingLayer]
     public string sortingLayer;
 
-    public Sprite bottomSprite;
     public Sprite[] repeatSprites;
 
     public float bottomYMin = -5f;
 
     public int repeatObjects = 2;
-    private SpriteRenderer bottom;
     private SpriteRenderer[] repeats;
 
-    private int repeatIndex = -1;
+    private int repeatIndex = 0;
 
     private void Start()
     {
-        GameObject bottomgo = new GameObject("Bottom");
-        bottomgo.transform.SetParent(transform);
-        bottom = bottomgo.AddComponent<SpriteRenderer>();
-        bottom.spriteSortPoint = SpriteSortPoint.Pivot;
-        bottom.sortingLayerName = sortingLayer;
-        bottom.sprite = bottomSprite;
-        bottomgo.AddComponent<BoxCollider2D>();
-
-        Vector3 botPos = bottomgo.transform.position;
-        botPos.y = bottomYMin;
-        bottomgo.transform.position = botPos;
-
         repeats = new SpriteRenderer[repeatObjects];
 
-        GameObject repGo = new GameObject("TreeRep");
+        GameObject repGo = new GameObject("BackgroundRep");
         repGo.transform.SetParent(transform);
         repeats[0] = repGo.AddComponent<SpriteRenderer>();
         repeats[0].spriteSortPoint = SpriteSortPoint.Pivot;
@@ -43,7 +29,7 @@ public class TreeRepeat : MonoBehaviour, IRepeat
         repGo.AddComponent<BoxCollider2D>();
 
         Vector3 repPos = repGo.transform.position;
-        repPos.y = bottom.transform.position.y + bottom.sprite.bounds.max.y;
+        repPos.y = bottomYMin;
         repGo.transform.position = repPos;
 
         GameObject prevGo = repGo;
@@ -64,13 +50,6 @@ public class TreeRepeat : MonoBehaviour, IRepeat
 
     public void SwapRepeat()
     {
-        if(repeatIndex == -1)
-        {
-            bottom.gameObject.SetActive(false);
-            repeatIndex++;
-            return;
-        }
-
         int forPos = mod(repeatIndex - 1, repeats.Length);
 
         Vector3 newPos = repeats[forPos].transform.position;
@@ -84,7 +63,7 @@ public class TreeRepeat : MonoBehaviour, IRepeat
 
     private int mod(int value, int mod)
     {
-        if(value >= 0)
+        if (value >= 0)
             return value % mod;
         return (mod + (value % mod)) % mod;
     }
