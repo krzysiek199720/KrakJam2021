@@ -45,6 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortingLayer: Background
   repeatSprites:
-  - {fileID: 21300000, guid: f97bf24a7f276c74996b64cd39b9ba8d, type: 3}
+  - {fileID: 21300000, guid: ca951024b6c81b74091e295e1bb7ad32, type: 3}
   bottomYMin: -5
   repeatObjects: 2

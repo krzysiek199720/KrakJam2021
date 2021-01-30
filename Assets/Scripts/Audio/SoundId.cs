@@ -4,5 +4,6 @@ using UnityEngine;
 
 public enum SoundId
 {
-    SOUNDTRACK_01,
+    Menu_intro,
+    Menu_loop,
 }
