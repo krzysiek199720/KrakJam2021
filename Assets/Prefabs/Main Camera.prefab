@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7515002761762823723}
   - component: {fileID: 7515002761762823722}
   - component: {fileID: 7515002761762823733}
+  - component: {fileID: 2086398539}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
+  isActive: 1
 --- !u!61 &7515002761762823723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -159,3 +161,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11ecb6454407c745a5e815f629f3d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2086398539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7515002761762823724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad90228a79d1aa4e88af7ca1d216260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeTop: {fileID: 0}
+  distanceToDarken: 0.8
+  rb2d: {fileID: 7515002761762823722}
+  fadeOutGo: {fileID: 0}
+  timeToPan: 3

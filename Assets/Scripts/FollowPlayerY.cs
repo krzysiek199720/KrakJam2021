@@ -11,6 +11,9 @@ public class FollowPlayerY : MonoBehaviour
     private bool shouldContinue = false;
     private float speed = 0f;
 
+    [HideInInspector]
+    public bool isActive = true;
+
     private void Start()
     {
         localShift = playerController.transform.position.y;
@@ -18,6 +21,9 @@ public class FollowPlayerY : MonoBehaviour
 
     void Update()
     {
+        if (!isActive)
+            return;
+
         shouldContinue = !GameManager.Instance.isAlive;
 
         float positionY = 0f;
