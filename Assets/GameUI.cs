@@ -11,7 +11,7 @@ public class GameUI : MonoBehaviour
 
     private void Update()
     {
-        scoreText.text = GameManager.Instance.Score.ToString();
+        scoreText.text = "Score\n<size=40>" + GameManager.Instance.Score.ToString()+"</size>";
         progressBar.value = GameManager.Instance.UltimateProgress();
     }
 }
