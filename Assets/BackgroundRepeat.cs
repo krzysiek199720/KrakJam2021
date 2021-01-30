@@ -7,17 +7,34 @@ public class BackgroundRepeat : MonoBehaviour, IRepeat
     [SortingMagic.SortingLayer]
     public string sortingLayer;
 
+    public GameObject bgFirst;
+
+    public Sprite bottomSprite;
     public Sprite[] repeatSprites;
 
     public float bottomYMin = -5f;
 
     public int repeatObjects = 2;
+    private SpriteRenderer bottom;
     private SpriteRenderer[] repeats;
 
-    private int repeatIndex = 0;
+    private int repeatIndex = -1;
 
     private void Start()
     {
+        GameObject bottomgo = new GameObject("Bottom");
+        bottomgo.transform.SetParent(transform);
+        bottom = bottomgo.AddComponent<SpriteRenderer>();
+        bottom.spriteSortPoint = SpriteSortPoint.Pivot;
+        bottom.sortingLayerName = sortingLayer;
+        bottom.sortingOrder = 1;
+        bottom.sprite = bottomSprite;
+        bottomgo.AddComponent<BoxCollider2D>();
+
+        Vector3 botPos = bottomgo.transform.position;
+        botPos.y = bottomYMin;
+        bottomgo.transform.position = botPos;
+
         repeats = new SpriteRenderer[repeatObjects];
 
         GameObject repGo = new GameObject("BackgroundRep");
@@ -29,8 +46,9 @@ public class BackgroundRepeat : MonoBehaviour, IRepeat
         repGo.AddComponent<BoxCollider2D>();
 
         Vector3 repPos = repGo.transform.position;
-        repPos.y = bottomYMin;
+        repPos.y = bottom.transform.position.y + bottom.sprite.bounds.max.y;
         repGo.transform.position = repPos;
+
 
         GameObject prevGo = repGo;
         for (int i = 1; i < repeats.Length; i++)
@@ -50,6 +68,14 @@ public class BackgroundRepeat : MonoBehaviour, IRepeat
 
     public void SwapRepeat()
     {
+        if (repeatIndex == -1)
+        {
+            bottom.gameObject.SetActive(false);
+            bgFirst.SetActive(false);
+            repeatIndex++;
+            return;
+        }
+
         int forPos = mod(repeatIndex - 1, repeats.Length);
 
         Vector3 newPos = repeats[forPos].transform.position;

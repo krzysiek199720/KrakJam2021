@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a264de3623ba7a046867031e1db973b7, type: 3}
   m_Name: UltimateData
   m_EditorClassIdentifier: 
-  timeActive: 1
-  speedMultiplier: 1
+  timeActive: 3.5
+  speedMultiplier: 4
