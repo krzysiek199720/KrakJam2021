@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383ee77dc5ca5cb4a85b9cefeb71a3c2, type: 3}
   m_Name: SlowdownData
   m_EditorClassIdentifier: 
+  timeActive: 5
   speedModifier: 0.5
-  timeActive: 1

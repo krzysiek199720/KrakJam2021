@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public PlayerControllerData data;
+    public Animator animator;
 
     private Vector2 desiredMovement = Vector2.zero;
     public float speedModifier = 1f;
@@ -41,6 +42,8 @@ public class PlayerController : MonoBehaviour
         DoPowerups();
         DoBasicMultiplier();
 
+        animator.SetFloat("walkSpeed", GetCurrentSpeedModifier());
+
         //MOVEMENT
         // smooth axis for now, can change to GetAxisRaw
         desiredMovement = new Vector2(
@@ -64,7 +67,12 @@ public class PlayerController : MonoBehaviour
 
     public float GetCurrentSpeed()
     {
-        return data.climbSpeed * speedModifier * basicSpeedMultiplier;
+        return data.climbSpeed * GetCurrentSpeedModifier();
+    }
+
+    public float GetCurrentSpeedModifier()
+    {
+        return speedModifier * basicSpeedMultiplier;
     }
 
     private void DoBasicMultiplier()

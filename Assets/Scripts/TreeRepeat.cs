@@ -25,6 +25,7 @@ public class TreeRepeat : MonoBehaviour, IRepeat
         bottom = bottomgo.AddComponent<SpriteRenderer>();
         bottom.spriteSortPoint = SpriteSortPoint.Pivot;
         bottom.sortingLayerName = sortingLayer;
+        bottom.sortingOrder = 1;
         bottom.sprite = bottomSprite;
         bottomgo.AddComponent<BoxCollider2D>();
 
@@ -41,10 +42,6 @@ public class TreeRepeat : MonoBehaviour, IRepeat
         repeats[0].sortingLayerName = sortingLayer;
         repeats[0].sprite = repeatSprites[0];
         repGo.AddComponent<BoxCollider2D>();
-
-        Vector3 repPos = repGo.transform.position;
-        repPos.y = bottom.transform.position.y + bottom.sprite.bounds.max.y;
-        repGo.transform.position = repPos;
 
         GameObject prevGo = repGo;
         for (int i = 1; i < repeats.Length; i++)

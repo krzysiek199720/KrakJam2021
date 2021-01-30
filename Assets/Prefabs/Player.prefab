@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 2b4cb318aa538f247bbdcae2be0dc957, type: 2}
+  animator: {fileID: 4747882136603567261}
   speedModifier: 1
   basicSpeedMultiplier: 1
   allowSteering: 1
