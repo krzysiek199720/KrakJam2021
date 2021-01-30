@@ -6,4 +6,9 @@ public enum SoundId
 {
     Menu_intro,
     Menu_loop,
+    Collect_Banan,
+    Collect_shield_deactivate,
+    Collect_slow,
+    Collect_bird,
+    Obstacle_hollow,
 }
