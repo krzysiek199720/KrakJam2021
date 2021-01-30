@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: ea95c50e7bc740145920125217222203, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: e4eb748c15cce374f89dc7edc3dcaa1a, type: 3}
   m_DefaultGameObject: {fileID: 4638250572790624393, guid: f380ed1f2cb27b14c94ac7132bbcb869,
     type: 3}
   m_DefaultColliderType: 0

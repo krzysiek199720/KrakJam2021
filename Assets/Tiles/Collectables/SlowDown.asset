@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: SlowDown
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 4225827b6aee6c4469b08477f8dd31ab, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: e9a2802dde9887542bc6793789fa7650, type: 3}
   m_DefaultGameObject: {fileID: 8849029456135564331, guid: 2735eca52fc787346b695078bcfb6fd8,
     type: 3}
   m_DefaultColliderType: 0

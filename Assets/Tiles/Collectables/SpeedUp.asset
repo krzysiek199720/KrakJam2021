@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: SpeedUp
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 62cab592f741ed741a7cc52aee38fa27, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: 770cd8fedb3c0a647852449c00379e87, type: 3}
   m_DefaultGameObject: {fileID: 6601124159688271909, guid: bcef130da2073cd478e7fe52f27ec269,
     type: 3}
   m_DefaultColliderType: 0

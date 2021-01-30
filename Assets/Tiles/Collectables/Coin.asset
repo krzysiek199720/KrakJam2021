@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: Coin
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 35a3dd86de091ee4fa745356a818befd, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: 3e673776af4a773489258bc838b0d9b4, type: 3}
   m_DefaultGameObject: {fileID: 196812691915054433, guid: 5dfe5d077a7fba642baad79fd066c1e1,
     type: 3}
   m_DefaultColliderType: 0

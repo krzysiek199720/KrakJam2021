@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: SteerBlock
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: b45b4c8431b35cc40a65f0fbe53151e3, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: 238f76a9133c78e4db64b9b89c4dbb77, type: 3}
   m_DefaultGameObject: {fileID: 6038384467926487598, guid: 20c2892e660927e4aac5ec2b43fb2fa2,
     type: 3}
   m_DefaultColliderType: 0
