@@ -12,6 +12,12 @@ public class Speedup : Powerup
             playerController.powerups.Remove(PowerupType.SPEEDUP);
             return;
         }
+        if (GameManager.Instance.Lifelines > 1)
+        {
+            playerController.powerups.Remove(PowerupType.SPEEDUP);
+            GameManager.Instance.TakeLifeline(1);
+            return;
+        }
         playerController.speedModifier = speedupData.speedModifier;
     }
 

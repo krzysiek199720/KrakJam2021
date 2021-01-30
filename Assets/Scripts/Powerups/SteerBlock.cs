@@ -13,6 +13,12 @@ public class SteerBlock : Powerup
             playerController.powerups.Remove(PowerupType.STEERBLOCK);
             return;
         }
+        if(GameManager.Instance.Lifelines > 1)
+        {
+            playerController.powerups.Remove(PowerupType.STEERBLOCK);
+            GameManager.Instance.TakeLifeline(1);
+            return;
+        }
         playerController.allowSteering = false;
     }
 
