@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
             timeToNextScore += Time.fixedDeltaTime;
             if(timeToNextScore >= 1f)
             {
-                Score += gameManagerData.pointsPerSecond;
+                Score += gameManagerData.pointsPerSecond * ScoreMultiplier;
                 timeToNextScore--;
             }
         }
@@ -68,7 +68,6 @@ public class GameManager : MonoBehaviour
             coinsCollected += coins;
             if(coinsCollected >= gameManagerData.coinsToUltimate)
             {
-                Debug.Log("coin ult");
                 coinsCollected -= gameManagerData.coinsToUltimate;
                 playerController.AddPowerup(PowerupType.ULTIMATE);
             }
@@ -119,6 +118,6 @@ public class GameManager : MonoBehaviour
 
     public float UltimateProgress()
     {
-        return coinsCollected / gameManagerData.coinsToUltimate;
+        return (float)coinsCollected / gameManagerData.coinsToUltimate;
     }
 }
