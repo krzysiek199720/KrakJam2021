@@ -19,4 +19,4 @@ MonoBehaviour:
   lifelines: 1
   scoreSpeedupInterval: 100
   speedupMultiplierPerInterval: 0.2
-  coinsToUltimate: 6
+  coinsToUltimate: 1
