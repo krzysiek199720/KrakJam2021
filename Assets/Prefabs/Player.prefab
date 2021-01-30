@@ -152,8 +152,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.037341177, y: 0.093464136}
-  m_Size: {x: 0.9945184, y: 1.7735666}
+  m_Offset: {x: -0.019, y: -0.074}
+  m_Size: {x: 1.37, y: 2.51}
   m_Direction: 0
 --- !u!50 &3773421012601600853
 Rigidbody2D:
@@ -195,6 +195,7 @@ MonoBehaviour:
   allowSteering: 1
   isGhost: 0
   isUltimateActive: 0
+  shouldGameRun: 0
   shield: {fileID: 28810235924872293}
   bees_swarm: {fileID: 6402860309836204286}
 --- !u!95 &4747882136603567261
