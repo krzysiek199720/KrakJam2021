@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public bool isUltimateActive = false;
 
     private Rigidbody2D rb2d;
+    public bool shouldGameRun = false;
 
     public Dictionary<PowerupType, Powerup> powerups;
     public Dictionary<PowerupType, BasicPowerupData> powerupsData;
@@ -33,9 +34,12 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!shouldGameRun)
+            return;
         if(!GameManager.Instance.isAlive)
         {
             // smierc
+            shouldGameRun = false;
             return;
         }
 

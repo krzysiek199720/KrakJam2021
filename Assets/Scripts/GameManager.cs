@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     private int coinsCollected = 0;
 
     private float timeToNextScore = 0f;
-    private bool calculateScore = true;
+    private bool calculateScore = false;
     private void Awake()
     {
         if (Instance == null)
@@ -44,6 +44,10 @@ public class GameManager : MonoBehaviour
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
         }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            StartGame();
+        }
     }
 
     private void FixedUpdate()
@@ -58,6 +62,12 @@ public class GameManager : MonoBehaviour
                 timeToNextScore--;
             }
         }
+    }
+
+    public void StartGame()
+    {
+        playerController.shouldGameRun = true;
+        calculateScore = true;
     }
 
     public void AddScore(int coins)
