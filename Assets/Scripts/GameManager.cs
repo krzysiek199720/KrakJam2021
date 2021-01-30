@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
             if(coinsCollected >= gameManagerData.coinsToUltimate)
             {
                 Debug.Log("coin ult");
-                coins -= gameManagerData.coinsToUltimate;
+                coinsCollected -= gameManagerData.coinsToUltimate;
                 playerController.AddPowerup(PowerupType.ULTIMATE);
             }
         }
