@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public PlayerController playerController;
+    public GameObject fadeOutGo;
 
     public GameObject tutorial;
 
     public float Score { get; private set; }
-    public int Lifelines { get; private set; }
+    private int lifelines = 1;
+    public int Lifelines { get { return lifelines; } private set { lifelines = value; if (lifelines < 1) { FadeOut(); Invoke("EndGame", 0.8f); } } }
     public bool isAlive { get { return Lifelines >= 1; } }
 
     public float ScoreMultiplier = 1f;
@@ -71,6 +73,19 @@ public class GameManager : MonoBehaviour
     {
         playerController.shouldGameRun = true;
         calculateScore = true;
+    }
+
+    public void EndGame()
+    {
+        Debug.Log("Ending");
+        playerController.shouldGameRun = false;
+        //mati do stuff here :D
+        SceneManager.LoadScene(2);
+    }
+
+    public void FadeOut()
+    {
+        fadeOutGo.SetActive(true);
     }
 
     public void AddScore(int coins)

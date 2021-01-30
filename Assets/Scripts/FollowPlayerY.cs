@@ -33,11 +33,11 @@ public class FollowPlayerY : MonoBehaviour
             positionY = transform.position.y + speed * Time.deltaTime;
         }
         else
-            positionY = playerController.transform.position.y;
+            positionY = playerController.transform.position.y - localShift;
 
         transform.position = new Vector3(
             transform.position.x,
-            positionY - localShift,
+            positionY,
             transform.position.z);
     }
 }

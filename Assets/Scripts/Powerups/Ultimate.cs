@@ -22,6 +22,8 @@ public class Ultimate : Powerup
         playerController.isUltimateActive = false;
         playerController.speedModifier = 1f;
         playerController.ultimate.gameObject.SetActive(false);
+        playerController.AddPowerup(PowerupType.SHIELD);
+
     }
 
     public override void AddTime()
