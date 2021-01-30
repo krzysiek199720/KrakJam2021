@@ -10,7 +10,6 @@ public class InvokeTreeTop : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            Debug.Log("Collision start seq");
             cm.StartEndingSequence();
         }
     }

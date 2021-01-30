@@ -107,7 +107,6 @@ public class PlayerController : MonoBehaviour
     {
         if (powerups.ContainsKey(type) && type != PowerupType.ULTIMATE)
         {
-            Debug.Log(type);
             powerups[type].AddTime();
             return;
         }

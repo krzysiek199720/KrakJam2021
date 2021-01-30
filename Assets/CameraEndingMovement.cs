@@ -48,7 +48,7 @@ public class CameraEndingMovement : MonoBehaviour
             fadeOutGo.SetActive(true);
         }
 
-        if (Mathf.Abs(result) < 0.1f)
+        if (Mathf.Abs(result) < 0.25f)
         {
             StartEndingComic();
             isRunning = false;
@@ -58,6 +58,7 @@ public class CameraEndingMovement : MonoBehaviour
 
     public void StartEndingComic()
     {
+        Debug.Log("Ending");
         playerController.shouldGameRun = false;
         //mati do stuff here :D
         SceneManager.LoadScene(2);
