@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject shield;
     public GameObject bees_swarm;
+    public GameObject stunned;
+    public GameObject ultimate;
 
     private void Start()
     {

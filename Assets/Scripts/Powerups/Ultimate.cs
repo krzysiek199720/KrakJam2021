@@ -14,12 +14,14 @@ public class Ultimate : Powerup
         //remove other speed modifiers
         playerController.powerups.Remove(PowerupType.SLOWDOWN);
         playerController.powerups.Remove(PowerupType.SPEEDUP);
+        playerController.ultimate.gameObject.SetActive(true);
     }
 
     public override void PowerupEnd(PlayerController playerController)
     {
         playerController.isUltimateActive = false;
         playerController.speedModifier = 1f;
+        playerController.ultimate.gameObject.SetActive(false);
     }
 
     public override void AddTime()

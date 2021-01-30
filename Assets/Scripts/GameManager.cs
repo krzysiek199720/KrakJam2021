@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public PlayerController playerController;
 
+    public GameObject tutorial;
+
     public float Score { get; private set; }
     public int Lifelines { get; private set; }
     public bool isAlive { get { return Lifelines >= 1; } }
@@ -44,9 +46,10 @@ public class GameManager : MonoBehaviour
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             StartGame();
+            tutorial.SetActive(false);
         }
     }
 

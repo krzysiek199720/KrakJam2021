@@ -19,12 +19,15 @@ public class SteerBlock : Powerup
             GameManager.Instance.TakeLifeline(1);
             return;
         }
+
+        playerController.stunned.gameObject.SetActive(true);
         playerController.allowSteering = false;
     }
 
     public override void PowerupEnd(PlayerController playerController)
     {
         playerController.allowSteering = true;
+        playerController.stunned.gameObject.SetActive(false);
     }
 
     public override void AddTime()
