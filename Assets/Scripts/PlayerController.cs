@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!shouldGameRun)
             return;
+
         if(!GameManager.Instance.isAlive)
         {
             // smierc

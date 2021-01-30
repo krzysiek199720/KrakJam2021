@@ -176,5 +176,4 @@ MonoBehaviour:
   treeTop: {fileID: 0}
   distanceToDarken: 4
   rb2d: {fileID: 7515002761762823722}
-  fadeOutGo: {fileID: 0}
   timeToPan: 3

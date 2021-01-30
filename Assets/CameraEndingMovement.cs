@@ -8,7 +8,6 @@ public class CameraEndingMovement : MonoBehaviour
     public SpriteRenderer treeTop;
     public float distanceToDarken = 0.8f;
     public Rigidbody2D rb2d;
-    public GameObject fadeOutGo;
 
     public float timeToPan = 2f;
 
@@ -45,22 +44,14 @@ public class CameraEndingMovement : MonoBehaviour
 
         if(result < distanceToDarken)
         {
-            fadeOutGo.SetActive(true);
+            GameManager.Instance.FadeOut();
         }
 
         if (Mathf.Abs(result) < 0.25f)
         {
-            StartEndingComic();
+            GameManager.Instance.EndGame();
             isRunning = false;
         }
 
-    }
-
-    public void StartEndingComic()
-    {
-        Debug.Log("Ending");
-        playerController.shouldGameRun = false;
-        //mati do stuff here :D
-        SceneManager.LoadScene(2);
     }
 }
