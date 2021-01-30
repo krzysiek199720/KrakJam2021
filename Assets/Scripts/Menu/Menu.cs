@@ -1,17 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public GameObject comic;
+
     void Start()
     {
         AudioController.Instance.Play(SoundId.Menu_intro);
-        Invoke("PlayMainMusic", 5f);
+        AudioController.Instance.Play(SoundId.Menu_loop, 5f);
     }
 
-    public void PlayMainMusic()
+    private void Update()
     {
-        AudioController.Instance.Play(SoundId.Menu_loop);
+        if (Input.anyKeyDown)
+        {
+            comic.gameObject.SetActive(true);
+        }
     }
 }
