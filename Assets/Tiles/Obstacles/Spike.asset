@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: Spike
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: a6618cb9f07e98b4c94ffc51c006afed, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: d3cae94f0e037a84c957401196ed61cd, type: 3}
   m_DefaultGameObject: {fileID: 1567294127566337764, guid: 5170c03891bee2f42a3baf6ab1c9318d,
     type: 3}
   m_DefaultColliderType: 0
