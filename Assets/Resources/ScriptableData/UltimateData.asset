@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: UltimateData
   m_EditorClassIdentifier: 
   timeActive: 3
-  speedMultiplier: 4
+  speedMultiplier: 2
