@@ -16,5 +16,7 @@ MonoBehaviour:
   pointsPerCoin: 0
   pointsPerPowerup: 0
   powerupMultiplier: 0
-  powerupMultiplierTime: 0
   lifelines: 1
+  scoreSpeedupInterval: 100
+  speedupMultiplierPerInterval: 0.2
+  coinsToUltimate: 1

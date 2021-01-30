@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3954eb2248f56b42842e94cc0233838, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  climbSpeed: 3
+  climbSpeed: 4
   speed: 7.5
   positionMinX: -4
   positionMaxX: 5

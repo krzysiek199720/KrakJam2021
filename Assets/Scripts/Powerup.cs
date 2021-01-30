@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class Powerup
 {
     public float TimeActiveLeft = 0f;
-    public PowerupType type;
     public abstract void PowerupStart(PlayerController playerController);
     public abstract void PowerupEnd(PlayerController playerController);
 

@@ -8,6 +8,17 @@ public class SteerBlock : Powerup
 
     public override void PowerupStart(PlayerController playerController)
     {
+        if (playerController.powerups.ContainsKey(PowerupType.ULTIMATE))
+        {
+            playerController.powerups.Remove(PowerupType.STEERBLOCK);
+            return;
+        }
+        if(GameManager.Instance.Lifelines > 1)
+        {
+            playerController.powerups.Remove(PowerupType.STEERBLOCK);
+            GameManager.Instance.TakeLifeline(1);
+            return;
+        }
         playerController.allowSteering = false;
     }
 

@@ -72,13 +72,13 @@ public class PlayerController : MonoBehaviour
     private void DoPowerups()
     {
         List<PowerupType> powerupsToDelete = new List<PowerupType>();
-        foreach (var powerup in powerups.Values)
+        foreach (var powerup in powerups)
         {
-            bool result = powerup.TickTime(Time.fixedDeltaTime);
+            bool result = powerup.Value.TickTime(Time.fixedDeltaTime);
             if (result)
             {
-                powerupsToDelete.Add(powerup.type);
-                powerup.PowerupEnd(this);
+                powerupsToDelete.Add(powerup.Key);
+                powerup.Value.PowerupEnd(this);
             }
         }
 
@@ -90,8 +90,9 @@ public class PlayerController : MonoBehaviour
 
     public void AddPowerup(PowerupType type)
     {
-        if (powerups.ContainsKey(type))
+        if (powerups.ContainsKey(type) && type != PowerupType.ULTIMATE)
         {
+            Debug.Log(type);
             powerups[type].AddTime();
             return;
         }
@@ -101,7 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             SteerBlock sb = (SteerBlock) powerups[PowerupType.STEERBLOCK];
             sb.PowerupEnd(this);
-            powerups.Remove(sb.type);
+            powerups.Remove(PowerupType.STEERBLOCK);
         }
         
         Powerup thePowerup = null;
@@ -188,6 +189,7 @@ public class PlayerController : MonoBehaviour
             }
             case PowerupType.ULTIMATE:
             {
+                    powerups.Remove(PowerupType.ULTIMATE);
                     Ultimate powerup = new Ultimate();
                     UltimateData ud;
                     if (powerupsData.ContainsKey(PowerupType.ULTIMATE))
