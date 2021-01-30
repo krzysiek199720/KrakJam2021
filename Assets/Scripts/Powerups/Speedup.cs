@@ -18,12 +18,15 @@ public class Speedup : Powerup
             GameManager.Instance.TakeLifeline(1);
             return;
         }
+
         playerController.speedModifier = speedupData.speedModifier;
+        playerController.bees_swarm.gameObject.SetActive(true);
     }
 
     public override void PowerupEnd(PlayerController playerController)
     {
         playerController.speedModifier = 1f;
+        playerController.bees_swarm.gameObject.SetActive(false);
     }
 
     public override void AddTime()

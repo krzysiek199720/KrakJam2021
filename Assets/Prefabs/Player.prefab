@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1484743038400133309}
-  - component: {fileID: 5841019379979131955}
+  - component: {fileID: 824540912933213401}
+  - component: {fileID: 960665517218839459}
   m_Layer: 8
   m_Name: Shield
   m_TagString: Untagged
@@ -31,7 +32,26 @@ Transform:
   m_Father: {fileID: 3773421012601600851}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5841019379979131955
+--- !u!95 &824540912933213401
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28810235924872293}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fadae7d257c90814cb9b4d7499406f4d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &960665517218839459
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,7 +89,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e7d4996ff6cda0d4f84f547061d681cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -174,6 +194,8 @@ MonoBehaviour:
   allowSteering: 1
   isGhost: 0
   isUltimateActive: 0
+  shield: {fileID: 28810235924872293}
+  bees_swarm: {fileID: 6402860309836204286}
 --- !u!95 &4747882136603567261
 Animator:
   serializedVersion: 3

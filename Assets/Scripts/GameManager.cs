@@ -116,4 +116,9 @@ public class GameManager : MonoBehaviour
         int multiplierTimes = Mathf.FloorToInt(Score / gameManagerData.scoreSpeedupInterval);
         return 1f + multiplierTimes * gameManagerData.speedupMultiplierPerInterval;
     }
+
+    public float UltimateProgress()
+    {
+        return coinsCollected / gameManagerData.coinsToUltimate;
+    }
 }

@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     public Dictionary<PowerupType, Powerup> powerups;
     public Dictionary<PowerupType, BasicPowerupData> powerupsData;
 
+    public GameObject shield;
+    public GameObject bees_swarm;
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
