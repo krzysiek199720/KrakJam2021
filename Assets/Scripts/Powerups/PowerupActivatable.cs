@@ -29,6 +29,14 @@ public class PowerupActivatable : Activatable
     {
         if (tilemap != null)
         {
+            if (playerController.isGhost)
+            {
+                if(type == PowerupType.SPEEDUP || type == PowerupType.STEERBLOCK)
+                {
+                    return;
+                }
+            }
+
             playerController.AddPowerup(type);
             toDestroy = true;
         }
