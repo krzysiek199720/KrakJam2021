@@ -13,4 +13,13 @@ public enum SoundId
     Obstacle_hollow,
     Ultitame_start,
     Ultitame_loop,
+    Comic_End,
+    Gameplay_intro,
+    Gameplay_loop,
+    Monkey_scream,
+    Cat_meow,
+    Collect_bees,
+    Collect_shield_activate,
+    Monkey_hit,
+    Monkey_drop,
 }
