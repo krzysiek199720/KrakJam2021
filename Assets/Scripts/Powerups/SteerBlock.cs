@@ -22,6 +22,7 @@ public class SteerBlock : Powerup
 
         playerController.stunned.gameObject.SetActive(true);
         playerController.allowSteering = false;
+        AudioController.Instance.Play(SoundId.Collect_bird);
     }
 
     public override void PowerupEnd(PlayerController playerController)

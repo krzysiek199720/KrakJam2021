@@ -21,12 +21,14 @@ public class Speedup : Powerup
 
         playerController.speedModifier = speedupData.speedModifier;
         playerController.bees_swarm.gameObject.SetActive(true);
+        AudioController.Instance.Play(SoundId.Collect_bees);
     }
 
     public override void PowerupEnd(PlayerController playerController)
     {
         playerController.speedModifier = 1f;
         playerController.bees_swarm.gameObject.SetActive(false);
+        AudioController.Instance.Stop(SoundId.Collect_bees);
     }
 
     public override void AddTime()

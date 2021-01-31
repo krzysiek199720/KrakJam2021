@@ -7,6 +7,8 @@ public class Shield : Powerup
     {
         GameManager.Instance.AddLifeline(1);
         playerController.shield.SetActive(true);
+
+        AudioController.Instance.Play(SoundId.Collect_shield_activate);
     }
 
     public override void PowerupEnd(PlayerController playerController)

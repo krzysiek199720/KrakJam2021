@@ -41,5 +41,6 @@ public class Hollow : Activatable
 
 
         GameManager.Instance.TakeLifeline(hollowData.damage);
+        AudioController.Instance.Play(SoundId.Obstacle_hollow);
     }
 }

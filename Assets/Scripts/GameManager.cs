@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Lifelines = gameManagerData.lifelines;
+
+        AudioController.Instance.Play(SoundId.Gameplay_intro);
+        float temp = AudioController.Instance.GetSoundLength(SoundId.Gameplay_intro);
+        AudioController.Instance.Play(SoundId.Gameplay_loop, temp);
     }
 
     private void Update()
@@ -95,6 +99,7 @@ public class GameManager : MonoBehaviour
     {
         if (calculateScore)
         {
+            AudioController.Instance.Play(SoundId.Collect_Banan);
             Score += coins * gameManagerData.pointsPerCoin * ScoreMultiplier;
             coinsCollected += coins;
             if(coinsCollected >= gameManagerData.coinsToUltimate)
@@ -131,12 +136,19 @@ public class GameManager : MonoBehaviour
             || playerController.powerups.ContainsKey(PowerupType.GHOST))
             return;
 
+        AudioController.Instance.Play(SoundId.Monkey_hit);
+
         Lifelines -= value;
         if (!isAlive)
+        {
             calculateScore = false;
-
-        if (Lifelines < 2)
+            AudioController.Instance.Play(SoundId.Monkey_drop);
+        }
+        else if (Lifelines < 2)
+        {
             playerController.shield.SetActive(false);
+            AudioController.Instance.Play(SoundId.Collect_shield_deactivate);
+        }
     }
 
     public void AddLifeline(int value)

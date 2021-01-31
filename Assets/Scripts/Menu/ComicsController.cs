@@ -16,6 +16,8 @@ public class ComicsController : MonoBehaviour
 
         if (PlayerPrefs.HasKey("Score") && score_text != null)
             score_text.text = "Score: " + PlayerPrefs.GetFloat("Score", 0).ToString();
+
+        AudioController.Instance.Play(SoundId.Comic_End);
     }
 
     private void Update()

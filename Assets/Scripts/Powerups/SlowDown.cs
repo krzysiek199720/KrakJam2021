@@ -15,6 +15,7 @@ public class SlowDown : Powerup
         }
         playerController.speedModifier = slowDownData.speedModifier;
         playerController.slower.gameObject.SetActive(true);
+        AudioController.Instance.Play(SoundId.Collect_slow);
     }
 
     public override void PowerupEnd(PlayerController playerController)
