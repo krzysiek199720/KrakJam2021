@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc00500a9142e24497ee818ec3d9ca8, type: 3}
   m_Name: GameManagerData
   m_EditorClassIdentifier: 
-  pointsPerSecond: 5
+  pointsPerSecond: 3
   pointsPerCoin: 4
   pointsPerPowerup: 4
   powerupMultiplier: 2
   lifelines: 1
-  scoreSpeedupInterval: 80
+  scoreSpeedupInterval: 120
   speedupMultiplierPerInterval: 0.1
-  coinsToUltimate: 6
+  coinsToUltimate: 10
