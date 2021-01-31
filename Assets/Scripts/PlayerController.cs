@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public GameObject bees_swarm;
     public GameObject stunned;
     public GameObject ultimate;
+    public GameObject slower;
 
     private void Start()
     {

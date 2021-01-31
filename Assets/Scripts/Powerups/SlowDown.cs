@@ -14,11 +14,13 @@ public class SlowDown : Powerup
             return;
         }
         playerController.speedModifier = slowDownData.speedModifier;
+        playerController.slower.gameObject.SetActive(true);
     }
 
     public override void PowerupEnd(PlayerController playerController)
     {
         playerController.speedModifier = 1f;
+        playerController.slower.gameObject.SetActive(false);
     }
 
     public override void AddTime()

@@ -134,6 +134,9 @@ public class GameManager : MonoBehaviour
         Lifelines -= value;
         if (!isAlive)
             calculateScore = false;
+
+        if (Lifelines < 2)
+            playerController.shield.SetActive(false);
     }
 
     public void AddLifeline(int value)

@@ -11,7 +11,7 @@ public class Shield : Powerup
 
     public override void PowerupEnd(PlayerController playerController)
     {
-        playerController.shield.SetActive(false);
+        
     }
 
     public override void AddTime() {}
