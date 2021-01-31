@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TreeRepeat : MonoBehaviour, IRepeat
 {
-    [SortingMagic.SortingLayer]
     public string sortingLayer;
 
     public Sprite bottomSprite;

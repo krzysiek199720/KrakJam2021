@@ -202,6 +202,7 @@ MonoBehaviour:
   bees_swarm: {fileID: 6402860309836204286}
   stunned: {fileID: 6424489829567739754}
   ultimate: {fileID: 5655535906223982624}
+  slower: {fileID: 0}
 --- !u!95 &4747882136603567261
 Animator:
   serializedVersion: 3
@@ -479,7 +480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6402860309836204286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3773421012601600851}

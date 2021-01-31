@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BackgroundRepeat : MonoBehaviour, IRepeat
 {
-    [SortingMagic.SortingLayer]
     public string sortingLayer;
 
     public GameObject bgFirst;
